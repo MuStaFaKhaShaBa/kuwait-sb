@@ -1,0 +1,1134 @@
+:root {
+  --main-color: 0, 120, 255;
+  --transition-anchor: 0.3s;
+  --transition-icon: 0.6s;
+  --bg-color: #f7f7f7;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden !important;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  z-index: 1000;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.floating-button.second {
+  bottom: 90px;
+  background-color: var(--bs-blue);
+
+}
+
+
+.floating-button.second:hover {
+  background-color: #12438c;
+  color: #fff;
+  
+}
+.floating-button:hover {
+  color: #fff;
+  background-color: #128C7E;
+}
+/* --------------------- End Nav Bar -------------------- */
+.navbar {
+  box-shadow: 0px 30px 50px rgb(0 0 0 / 20%);
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar button[aria-expanded] {
+  border: none;
+  transition: var(--transition-anchor);
+}
+.navbar button[aria-expanded="true"] {
+  border: 0.2rem solid #fff;
+}
+.navbar button svg {
+  font-size: 25px;
+}
+.navbar-nav .nav-link {
+  color: #fff;
+}
+/* -- Under Line With ::before -- */
+.navbar-nav .nav-link:is(.active, .show),
+.navbar-nav .nav-link:hover {
+  color: rgb(var(--main-color));
+  transition: var(--transition-anchor);
+}
+.navbar-nav .nav-link.nav-link:is(.active, .show):before,
+.navbar-nav .nav-link::before {
+  content: "";
+  width: 100%;
+  margin-inline: auto;
+  height: 0.1rem;
+  background-color: rgb(var(--main-color));
+  display: block;
+  transform: translateY(1.8rem);
+  transition: var(--transition-anchor);
+}
+.navbar-nav .nav-link::before {
+  width: 0;
+}
+.navbar-nav .nav-link:hover:before {
+  width: 100%;
+}
+
+.navbar #btn-english,
+.navbar #btn-arabic {
+  font-size: 0.75rem;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 2rem !important;
+  }
+  .navbar-nav .nav-link.nav-link:is(.active, .show):before,
+  .navbar-nav .nav-link::before {
+    transform: translateY(2.5rem);
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.5rem;
+  }
+}
+/* --------------------- End Nav Bar -------------------- */
+
+
+/* Background Style */
+#home.bg-style {  position: relative;
+  height: 100vh; /* Set your desired height */
+  overflow: hidden;
+  background: no-repeat center;
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+#home.bg-style::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+/* Background Style */
+
+
+@keyframes slide {
+  0% {
+    background-image: url("../img/bg1.webp");
+  }
+  50% {
+    background-image: url("../img/bg2.webp");
+  }
+  100% {
+    background-image: url("../img/bg1.webp");
+  }
+}
+
+/* ---- Start Content ---- */
+#home .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+#home .content h1 {
+  font-size: 2rem;
+  color: var(--bs-gray-200);
+  width: 70%;
+  text-align: center;
+}
+#home .content .typed.translate-ar,
+#home .content .typed.translate-en {
+  font-size: 3.8rem;
+  color: #ececec;
+}
+#home .content .typed.translate-en::after,
+#home .content .typed.translate-ar::after {
+  content: "";
+  color: #fff;
+  font-weight: 400;
+  padding-left: 1rem;
+  padding-right: 0.4rem;
+}
+#home .content .typed.translate-en::after {
+  border-right: 0.1rem solid #ececec;
+}
+#home .content .typed.translate-ar::after {
+  border-left: 0.1rem solid #ececec;
+  animation: typed-ar 20s linear infinite;
+  /* -_*_-  Animation Implementation in assets.css File  -_*_- */
+}
+#home .content .typed.translate-en::after {
+  animation: typed-en 20s linear infinite;
+  /* -_*_-  Animation Implementation in assets.css File  -_*_- */
+}
+
+.social a {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.social.developer a {
+  width: 25px;
+  height: 25px;
+
+  font-size: 0.75rem;
+}
+.social a:hover {
+  background-color: var(--bs-primary);
+}
+
+/* ----  End Content ----- */
+/* -----------------  End Home Section ------------------ */
+
+/* -----------------  Start About Section ------------------ */
+#about .img-profile{
+  min-height: 624px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#about .img-profile::after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: -30px;
+  bottom: -30px;
+  background-image: url("../img/dots.png");
+  background-repeat: repeat;
+  z-index: -1;
+}
+#about .skills-rate .progress-bar {
+  background-color: var(--bg-color);
+  box-shadow: 0px 2px 7px rgb(0 0 0 / 15%) inset;
+  margin-bottom: 2.25rem;
+}
+#about .skills-rate .progress-bar span {
+  font-size: 0.8rem;
+  padding-block: 0.25rem;
+  width: attr(data-rate);
+}
+#about .skills-rate .progress-bar span p {
+  font-size: inherit;
+}
+#about .skills-rate .progress-bar span::after {
+  content: attr(data-rate);
+}
+.fade-image {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 2s ease; /* Adjust duration for fade effect */
+}
+
+.fade-image.show {
+  opacity: 1;
+  position: relative;
+}
+#about button,
+#contact button {
+  transition: var(--transition-icon);
+  color: var(--bs-secondary);
+  background-color: #fff;
+  font-size: 0.9rem;
+  padding: 10px 25px;
+}
+#about button:first-of-type,
+#about button:hover,
+#contact button {
+  background-color: var(--bs-secondary);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  #about h2 {
+    font-size: 3rem;
+  }
+  #about .about-desc {
+    font-size: 1.5rem;
+  }
+  #about .skills-rate .progress-bar span {
+    font-size: 1rem;
+  }
+}
+
+/* General Styling */
+.wp-block-themeisle-blocks-advanced-column {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Headings */
+.wp-block-heading {
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Ordered List */
+.wp-block-themeisle-blocks-advanced-column ol {
+  padding-left: 20px;
+}
+
+.wp-block-themeisle-blocks-advanced-column ol li {
+  font-size: 16px;
+  margin: 8px 0;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Table Styling */
+.wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.wp-block-table th, .wp-block-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.wp-block-table th {
+  background-color: #0073aa;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wp-block-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.wp-block-table a {
+  color: #0073aa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.wp-block-table a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .wp-block-table table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+}
+
+/* Spacing */
+.wp-block-spacer {
+  display: block;
+}
+
+/* Table Caption */
+.wp-element-caption {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* -----------------   End About Section ------------------ */
+
+/* -----------------   Start Services Section ------------------ */
+#services {
+  background-color: var(--bg-color);
+}
+.head h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+.head h2::after {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background-image: url("../img/dots.png");
+  background-repeat: repeat;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: -1;
+}
+#services .service,
+#contact .contact {
+  box-shadow: 0px 10px 30px -8px rgb(0 0 0 / 10%);
+}
+.icon-container {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--bg-color);
+  transition: var(--transition-icon);
+}
+.icon-container svg {
+  color: var(--bs-secondary);
+  font-size: 1.7rem;
+  transition: var(--transition-icon);
+}
+#services .service p,
+#contact .contact p {
+  font-size: 0.9rem;
+}
+div:hover > .icon-container {
+  background-color: var(--bs-secondary);
+}
+div:hover > .icon-container svg {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  #services .service h3,
+  #contact .contact h6 {
+    font-size: 1.8rem !important;
+  }
+  #services .service p,
+  #contact .contact .text-address {
+    font-size: 1.5rem;
+  }
+}
+/* -----------------    End Services Section ------------------- */
+
+/* -----------------     Start Portfolio Section ------------------- */
+.nav-tabs .nav-item .nav-link::after,
+.nav-tabs .nav-link.active::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: var(--transition-anchor);
+  background-color: var(--bs-secondary);
+}
+.nav-tabs .nav-item .nav-link:hover::after,
+.nav-tabs .nav-item .nav-link.active::after {
+  width: 100%;
+}
+#portfolio .tab-content .port .content {
+  width: 98.5%;
+  height: 97%;
+  background-color: #fffffff1;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+/* #portfolio .tab-content .port:hover .content, */
+#portfolio .tab-content .port.active .content {
+  opacity: 1;
+  gap: 0;
+}
+#portfolio .holder {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bs-secondary);
+  transition: var(--transition-anchor);
+}
+#portfolio .holder svg {
+  color: #fff;
+  font-size: 12px;
+}
+#portfolio .holder:hover {
+  background-color: #fff;
+}
+#portfolio .holder:hover svg {
+  color: var(--bs-secondary);
+}
+
+#portfolio .port {
+  height: 300px; /* Set a fixed height for the portfolio box */
+  overflow: hidden; /* Hide any overflowing content */
+  position: relative; /* Keep the content positioned absolutely */
+}
+
+#portfolio .port img {
+  width: 100%;
+  height: 100%; /* Make the image fill the container */
+  object-fit: contain; /* Ensure the image covers the container without stretching */
+}
+
+#portfolio .content {
+  position: absolute;
+  bottom: 5px; /* Position the content at the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the content horizontally */
+}
+#portfolio .carousel-control-next,
+#portfolio .carousel-control-prev {
+  width: 7%;
+}
+@media screen and (max-width: 768px) {
+  .nav-tabs .nav-item .nav-link {
+    font-size: 1.5rem;
+  }
+}
+
+/* -----------------      End Portfoilo Section -------------------- */
+
+/* -----------------      Start Testimonial Section -------------------- */
+#testimonials {
+  background-color: var(--bg-color);
+}
+.author-img {
+  width: 5rem;
+  height: 5rem;
+  overflow: hidden;
+}
+.author-img img {
+  object-fit: cover;
+}
+.desc-text {
+  font-size: 0.9rem;
+  max-width: 80%;
+  margin-inline: auto;
+}
+#testimonials h3 + p {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.carousel-indicators [data-bs-target] {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: #869791;
+}
+@media screen and (max-width: 768px) {
+  #testimonials .desc-text {
+    font-size: 1.5rem;
+  }
+  #testimonials h3 {
+    font-size: 2rem;
+  }
+  #testimonials h3 + p {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+@media screen and (max-width: 350px) {
+  .desc-text {
+    max-width: 100%;
+  }
+}
+.author-img img {
+  width: 120px; /* Set your desired width */
+  height: 120px; /* Set your desired height */
+  object-fit: cover; /* This ensures the image covers the entire area */
+  border-radius: 50%; /* This makes the image circular */
+}
+
+/* -----------------       End Testimonial Section --------------------- */
+
+/* -----------------    Start Fun Facts Section ------------------- */
+#fun-facts h3 {
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+/* -----------------     End Fun Fucts Section  ------------------- */
+
+/* -----------------      Start Contact Section -------------------- */
+#contact {
+  background-color: var(--bg-color);
+}
+
+#contact .icon-container {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+#contact .icon-container svg {
+  font-size: 1.5rem;
+}
+#contact form .row div input,
+#contact textarea {
+  width: 49%;
+  background-color: #f4f4f4;
+  border: none;
+  outline: none;
+  color: #869791;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#contact textarea {
+  width: 100%;
+}
+#contact form .row div input:focus {
+  border: none;
+}
+#contact .map-container {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (height is 56.25% of width) */
+  overflow: hidden; /* Hide overflow */
+}
+
+#contact .map-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1rem solid var(--bs-light);
+  width: 90%;
+  height: 90%; /* Full height */
+}
+
+#contact button {
+  width: fit-content;
+  padding-inline: 50px;
+}
+#contact button:hover {
+  background-color: #fff;
+  color: var(--bs-secondary);
+}
+
+/* -----------------       End Contact Section       --------------- */
+
+/* -----------------      Start Footer Section       --------------- */
+footer {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bs-secondary);
+}
+footer p {
+  color: #748182;
+  word-spacing: 2px;
+}
+/* -----------------        End Footer Section       -------------- */
+/* H T M L */
+@media (min-width: 0px) and (max-width: 359px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (min-width: 360px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
+/* H T M L */
+
+body {
+  background-color: #f5f5f5;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* --------------------- End Nav Bar -------------------- */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.navbar .navbar-brand {
+  font-weight: 600;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar button[aria-expanded] {
+  border: none;
+  transition: var(--transition-anchor);
+}
+.navbar button[aria-expanded="true"] {
+  border: 0.2rem solid #fff;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link{
+  font-size: 1.25rem;
+}
+/* -- Under Line With ::before -- */
+.navbar-dark .navbar-nav .nav-link:is(.active, .show),
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgb(var(--bs-dark));
+  transition: var(--transition-anchor);
+}
+.navbar-dark .navbar-nav .nav-link.nav-link:is(.active, .show):before,
+.navbar-dark .navbar-nav .nav-link::before {
+  content: "";
+  width: 70%;
+  height: 0.2rem;
+  background-color: var(--bs-dark);
+  display: block;
+  transform: translateY(2rem);
+  transition: var(--transition-anchor);
+}
+.navbar-dark .navbar-nav .nav-link::before {
+  width: 0;
+}
+.navbar-dark .navbar-nav .nav-link:hover:before {
+  width: 70%;
+}
+/* -- Under Line With ::before -- */
+/* ---- Start dropdown Style ---- */
+.dropdown-menu {
+  min-width: 13rem;
+}
+.deep-dropdown-item {
+  transition: padding var(--transition-anchor);
+}
+.deep-dropdown-item:hover {
+  padding-left: 0.6rem;
+  color: rgb(var(--main-color)) !important;
+}
+.deep-dropdown-menu {
+  background-color: #fff;
+  transition: var(--transition-anchor);
+}
+/* ---- End dropdown Style ---- */
+/* ------  End Deep Drop Down Style  ------ */
+
+/* Start Media */
+@media screen and (min-width: 992px) {
+  .deep-dropdown-menu {
+      position: absolute;
+      top: 0;
+      right: 99%;
+      transform: scaleX(0);
+      transform-origin: top right;
+      padding: 20px;
+      max-height: 9.5rem;
+      text-align: center;
+      white-space: nowrap;
+  }
+  .deep-dropdown-toggler:hover + .deep-dropdown-menu {
+     transform: scaleX(1);
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar-dark .navbar-nav .nav-link {
+      width: fit-content !important;
+  }
+  /* Deep Drop Down Menu Diff Style on Screen */
+  .deep-dropdown-menu {
+      position: static !important;
+      height: 0;
+      background-color: #f5f5f5;
+  }
+  .deep-dropdown-toggler:hover + .deep-dropdown-menu {
+      height: 9.5rem;
+  }
+}
+/* End Media */
+/* --------------------- End Nav Bar -------------------- */
+
+/* ----------------- Start Home Section ----------------- */
+#home.bg-style {
+  background-image: url("../img/hero.jpg");
+}
+/* ---- Start Content ---- */
+
+
+/* Start Media */
+@media screen and (max-width: 768px) {
+  #home .content h1 {
+      font-size: 2.5rem;
+  }
+  #home .content .typed::after {
+      font-size: 2rem;
+  }
+}
+/* End Media */
+
+/* ----  End Content ----- */
+/* -----------------  End Home Section ------------------ */
+
+/* -----------------  Start About Section ------------------ */
+#about .container {
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+}
+/* - Start First Column Style - */
+#about .personal-data ul li {
+  font-size: 1rem;
+  width: fit-content;
+}
+#about .personal-data ul li span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+/* -- Start Skills Style -- */
+#about .skills h2 {
+  font-size: 1.3rem;
+}
+#about .skills div h4 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+#about .skills .prg-bar {
+  height: 0.7rem;
+  background-image: linear-gradient(to right, rgb(var(--main-color)) 85%, rgba(var(--main-color), 0.2) 85%);
+}
+#about .skills div:nth-of-type(2) .prg-bar {
+  background-image: linear-gradient(to right, rgb(var(--main-color)) 75%, rgba(var(--main-color), 0.2) 75%);
+}
+#about .skills div:nth-of-type(3) .prg-bar {
+  background-image: linear-gradient(to right, rgb(var(--main-color)) 50%, rgba(var(--main-color), 0.2) 50%);
+}
+#about .skills div:last-of-type .prg-bar {
+  background-image: linear-gradient(to right, rgb(var(--main-color)) 90%, rgba(var(--main-color), 0.2) 90%);
+}
+/* -- End Skills Style -- */
+/* - Wnd First Column Style - */
+/* - Start Second Column Style - */
+#about .about-info h2::after,
+#contact h2::after {
+  content: "";
+  width: 5rem;
+  height: 0.25rem;
+  background-color: rgb(var(--main-color));
+  position: absolute;
+  top: 120%;
+  left: 0;
+}
+#about .about-info p {
+  line-height: 1.5;
+  color: #4e4e4e;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+/* - End Second Column Style - */
+/* Start Media */
+@media screen and (max-width: 768px) {
+  #about .about-info h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+/* End Media */
+/* -----------------   End About Section ------------------ */
+
+/* -----------------   Start Services Section ------------------ */
+#services .service .inner {
+  border-radius: 0.6rem;
+  background-color: #fff;
+}
+#services .service .icon {
+  width: 7.5rem;
+  height: 7.5rem;
+  border: 0.6rem solid rgb(var(--main-color));
+  transition: var(--transition-icon);
+}
+#services .service .icon svg {
+  font-size: 2.5rem;
+  color: rgb(var(--main-color));
+  transition: var(--transition-icon);
+}
+/* Hover On Service Box */
+#services .service:hover .icon {
+  border: 0.6rem solid #ccdff5;
+  background-color: rgb(var(--main-color));
+}
+#services .service:hover .icon svg {
+  color: #fff;
+}
+/* Hover On Services Box */
+#services .service .inner h3 {
+  font-size: 1.4rem;
+}
+#services .service .inner p {
+  color: #4e4e4e;
+  font-size: 1rem;
+}
+/* -----------------    End Services Section ------------------- */
+
+/* -----------------    Start Fun Facts Section ------------------- */
+/* Set Background Image and overlay layer */
+#fun-facts.bg-style {
+  background-image: url("../img/decore4.jpg");
+  background-position: 0%;
+  background-size: contain;
+  position: relative;
+  z-index: 1;
+}
+#fun-facts.bg-style::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+#fun-facts.bg-style::after,
+#testimonial.bg-style::after,
+#contact.bg-style::after {
+  background-color: rgba(var(--main-color), 0.7);
+}
+/* Set Background Image and overlay layer */
+/* ---- Start Fact Style ---- */
+#fun-facts .fact .icon {
+  width: 6rem;
+  height: 6rem;
+  border: 0.4rem solid rgba(255, 255, 255, 0.8);
+}
+#fun-facts .fact p:last-child {
+  font-size: 1.2rem;
+}
+/* ---- End Fact Style ---- */
+/* -----------------     End Fun Fucts Section  ------------------- */
+
+/* -----------------     Start Portfolio Section ------------------- */
+
+/* ---- Start Portfolio Work Box Style ---- */
+#portfolio .card .card-img-top {
+  transition: 0.8s;
+}
+#portfolio .card:hover .card-img-top {
+  transform: scale(1.3);
+}
+#portfolio .card .card-body .content h5 {
+  font-size: 1.2rem;
+}
+#portfolio .card .card-body .content p {
+  font-size: 0.7rem;
+  color: #4e4e4e;
+}
+#portfolio .card .card-body .content p span {
+  color: rgb(var(--main-color));
+  font-weight: 500;
+}
+#portfolio .card .card-body a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: .2rem solid rgb(var(--main-color));
+}
+#portfolio .card .card-body a svg {
+  color: rgb(var(--main-color));
+  font-size: 1.4rem;
+}
+/* --- Start Images Arrangment --- */
+#portfolio .content .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+#portfolio .col {
+  width: 31.5%;
+}
+#portfolio .col > div:nth-child(2) {
+  margin-block: 22px;
+}
+
+#portfolio .row .col .project {
+  position: relative;
+  width: 100%;
+}
+
+#portfolio .project .project-content {
+  width: 100%;
+  height: 99%;
+  background-color: rgba(var(--bs-primary-rgb), 0.6);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+#portfolio .project:hover .project-content {
+  opacity: 1;
+}
+#portfolio .project img {
+  width: 100%;
+  border-radius: 5px;
+}
+#portfolio .project .project-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+/* --- End Images Arrangment --- */
+/* ---- End Portolio Content Style */
+/* Start Media */
+@media screen and (max-width: 992px) and (min-width: 600px) {
+  #portfolio .col {
+      width: 48%;
+  }
+  #portfolio .col:last-child {
+      transform: translateY(-180px);
+  }
+  #portfolio .col:last-child .proj6 {
+      top: -40%;
+      left: 108%;
+  }
+  #portfolio .content {
+      width: 90%;
+  }
+}
+/* Solve Space Top Between Iamge And Above in media 860px */
+@media screen and (max-width: 860px) and (min-width: 600px) {
+  #portfolio .col:last-child {
+      transform: translateY(-160px);
+  }
+}
+@media screen and (max-width: 700px) and (min-width: 600px) {
+  #portfolio .col:last-child {
+      transform: translateY(-135px);
+  }
+}
+/* Solve Space Top Between Iamge And Above in media 860px */
+@media screen and (max-width: 600px) {
+  #portfolio  .row {
+      flex-direction: column;
+  }
+  #portfolio .col {
+      width: 100%;
+  }
+}
+/* End Media */
+/* ----  End Portfolio Work Box Style ---- */
+/* -----------------      End Portfoilo Section -------------------- */
+
+/* -----------------      Start Testimonial Section -------------------- */
+#testimonial.bg-style,
+#contact.bg-style {
+  background-image: url("../img/overlay-bg.jpg");
+}
+.carousel-img {
+  width: 9rem;
+  height: 9rem;
+}
+.desc-text {
+  max-width: 100%;
+}
+.carousel-indicators [data-bs-target] {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+/* Start Media */
+
+@media screen and (min-width: 768px) {
+  .desc-text {
+      width: 85%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .desc-text {
+      width: 65%;
+  }
+}
+/* End Media */
+/* -----------------       End Testimonial Section --------------------- */
+
+/* -----------------      Start Blog Section -------------------- */
+.card-category {
+  top: -15%;
+  background-color: rgb(var(--main-color));
+}
+.card-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+.card a {
+  transition: var(--transition-anchor);
+}
+.card a:hover {
+  color: rgb(var(--main-color)) !important;
+}
+.card-category h6 {
+  font-size: 0.7rem !important;
+}
+.card-footer img {
+  width: 1.8rem;
+}
+/* -----------------       End Blog Section --------------------- */
+
+/* -----------------      Start Contact Section -------------------- */
+#contact .contact-info svg {
+  color: rgb(var(--main-color));
+}
+#contact button[type="submit"] {
+  background-color: rgb(var(--main-color));
+  transition: var(--transition-anchor);
+}
+#contact button[type="submit"]:hover {
+  background-color: rgba(var(--main-color), 0.7);
+  box-shadow: 0 0 0px 5px rgba(var(--main-color), 0.2);
+}
+#contact .social-media li {
+  width: 3rem;
+  height: 3rem;
+  border: .25rem solid rgb(var(--main-color));
+  transition: var(--transition-icon);
+}
+#contact .social-media li svg {
+  font-size: 1.3rem;
+  transition: var(--transition-icon);
+}
+#contact .social-media li:hover {
+  border: .3rem solid #ccdff5;
+  background-color: rgb(var(--main-color));
+}
+#contact .social-media li:hover svg {
+  color: #fff;
+}
+/* Start Media */
+/* End Media */
+/* -----------------       End Contact Section       --------------- */
+/* -----------------      Start Footer Section       --------------- */
+footer {
+  background-color: rgba(var(--main-color), 0.7);
+  box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.473) inset;
+}
+/* -----------------        End Footer Section       -------------- */

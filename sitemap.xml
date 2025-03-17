@@ -1,0 +1,31 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- URL Entry for -->
+  <url>
+    <loc>https://kuwait-sb.com/</loc>
+    <lastmod>2025-03-04</lastmod>
+
+    <!-- Image 1: Discount Dyer -->
+    <image:image>
+      <image:loc>https://kuwait-sb.com/img/kuwait-home-finishing-painting-service.png</image:loc>
+      <image:caption>صباغ بالكويت يقدم خصومات على خدمات التشطيبات الداخلية والخارجية مع جودة مضمونة</image:caption>
+      <image:title>تشطيبات مميزة مع خصم %50 على خدمات الصباغة بالكويت</image:title>
+    </image:image>
+
+    <!-- Image 2: Discount Dyer -->
+    <image:image>
+      <image:loc>https://kuwait-sb.com/img/best-painter-kuwait.png</image:loc>
+      <image:caption>عروض وخصومات خاصة على خدمات الدهانات وتشطيبات الجدران في الكويت</image:caption>
+      <image:title>أفضل صباغ بالكويت بأسعار مخفضة وجودة عالية</image:title>
+    </image:image>
+
+    <!-- Image 3: Discount Dyer -->
+    <image:image>
+      <image:loc>https://kuwait-sb.com/img/painter-kuwait-advertisement.png</image:loc>
+      <image:caption>إعلان خصومات تصل إلى %50 على خدمات الصباغة في الكويت مع ضمان العمل الاحترافي</image:caption>
+      <image:title>خصومات مذهلة على دهانات الجدران في الكويت</image:title>
+    </image:image>
+  </url>
+ 
+</urlset>
